@@ -1,5 +1,13 @@
 # fr-utils-objective-c
 An Objective-C library that provides Java-like protocols and classes:
-* [ArrayList](FRUtils/FRArrayList.h)
-* [LinkedList](https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html)
-* [PriorityQueue](https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html)
+
+* [FRCollection](FRUtils/FRCollection.h)
+* [FRList](FRUtils/FRList.h)
+* [FRQueue](FRUtils/FRQueue.h)
+* [FRStack](FRUtils/FRStack.h)
+* [FRDeque](FRUtils/FRDeque.h)
+* [FRArrayList](FRUtils/FRArrayList.h)
+* [FRLinkedList](FRUtils/FRLinkedList.h)
+* [FRPriorityQueue](FRUtils/FRPriorityQueue.h)
+
+![Hierarchy](FRUtils/Hierarchy.png)
