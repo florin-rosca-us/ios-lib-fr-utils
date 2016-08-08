@@ -1,5 +1,4 @@
 # fr-utils-objective-c
-An Objective-C library that provides Java-like protocols and classes:
 
 ![Hierarchy](FRUtils/Hierarchy.png)
 
