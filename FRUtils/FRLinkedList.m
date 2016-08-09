@@ -52,7 +52,7 @@
 @implementation FRLinkedList {
     Node *head;
     Node *tail;
-    // size must be unsigned long for countByEnumerationWithState to work
+    // Use unsigned long instead of NSUInteger so that countByEnumerationWithState does not complain about wrong pointer type
     unsigned long size;
 }
 
