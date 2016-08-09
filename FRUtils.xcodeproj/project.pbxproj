@@ -12,7 +12,7 @@
 		4E7471201D4C1AA600D8609A /* FRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E74711F1D4C1AA600D8609A /* FRConstants.m */; };
 		4E7F3DD11C629D1700753102 /* FRLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F3DD01C629D1700753102 /* FRLinkedList.m */; };
 		4EB290AA1D49E12400E6BD1E /* FRPriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB290A91D49E12400E6BD1E /* FRPriorityQueue.m */; };
-		4ED349731D3D655700861C00 /* FRUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED349721D3D655700861C00 /* FRUtilTests.m */; };
+		4ED349731D3D655700861C00 /* FRUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED349721D3D655700861C00 /* FRUtilsTests.m */; };
 		4ED349751D3D655700861C00 /* libFRUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1C85E31C5FFB2E00B66912 /* libFRUtils.a */; };
 		4ED349811D3D87BC00861C00 /* FRCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED349801D3D87BC00861C00 /* FRCollection.m */; };
 		4ED349831D3D8B1000861C00 /* FRList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED349821D3D8B1000861C00 /* FRList.m */; };
@@ -59,7 +59,7 @@
 		4ECA7A241C63F4DC0040DF1A /* FRDeque.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRDeque.h; sourceTree = "<group>"; };
 		4ED349681D3D606000861C00 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = FRUtils/README.md; sourceTree = "<group>"; };
 		4ED349701D3D655700861C00 /* FRUtilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FRUtilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4ED349721D3D655700861C00 /* FRUtilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRUtilTests.m; sourceTree = "<group>"; };
+		4ED349721D3D655700861C00 /* FRUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRUtilsTests.m; sourceTree = "<group>"; };
 		4ED349741D3D655700861C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ED3497B1D3D683900861C00 /* Hierarchy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hierarchy.png; path = FRUtils/Hierarchy.png; sourceTree = "<group>"; };
 		4ED349801D3D87BC00861C00 /* FRCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCollection.m; sourceTree = "<group>"; };
@@ -149,10 +149,11 @@
 		4ED349711D3D655700861C00 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4ED349721D3D655700861C00 /* FRUtilTests.m */,
+				4ED349721D3D655700861C00 /* FRUtilsTests.m */,
 				4ED349741D3D655700861C00 /* Info.plist */,
 			);
-			path = Tests;
+			name = Tests;
+			path = FRUtilsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ED349731D3D655700861C00 /* FRUtilTests.m in Sources */,
+				4ED349731D3D655700861C00 /* FRUtilsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = FRUtilsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.rosca.Tests;
@@ -385,7 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = FRUtilsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.rosca.Tests;
