@@ -15,6 +15,9 @@
 #import "FRQueue.h"
 #import "FRArrayList.h"
 
+
+#pragma mark - FRPriorityQueue base protocols
+
 // A protocol that applies to all data types including primitive data types
 @protocol FRPriorityQueueBase <FRQueueBase>
 @end
@@ -22,6 +25,9 @@
 // A protocol that applies to data types derived from NSObject
 @protocol FRPriorityQueueWithAny <FRQueueWithAny>
 @end
+
+
+#pragma mark - FRPriorityQueue primitive data type protocols
 
 // Extra protocols that apply to primitive data types
 @protocol FRPriorityQueueWithInt <FRPriorityQueueBase, FRQueueWithInt>
@@ -36,10 +42,15 @@
 @protocol FRPriorityQueueWithDouble <FRPriorityQueueBase, FRQueueWithDouble>
 @end
 
+
+#pragma mark - FRPriorityQueue protocol
+
 // The FRPriorityQueue protocol applies to data types derived from NSObject
 @protocol FRPriorityQueue <FRPriorityQueueBase, FRPriorityQueueWithAny>
 @end
 
+
+#pragma mark - FRPriorityQueue class
 
 // The class
 @interface FRPriorityQueue : FRCollection <FRPriorityQueue> {
@@ -59,6 +70,8 @@
 - (instancetype)initWithCapacity: (NSInteger)capacity;
 @end
 
+
+#pragma mark - FRPriorityQueueWith categories
 
 // Categories add support for primitive data types
 @interface FRPriorityQueue (WithInt) <FRPriorityQueueWithInt>

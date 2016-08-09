@@ -19,6 +19,8 @@
 #define _ABSTRACT { @throw [NSException exceptionWithName:FRErrNotImplemented reason:@"Abstract class" userInfo:nil]; }
 
 
+#pragma mark - FRCollection base protocols
+
 // A protocol that applies to all data types including primitive data types
 @protocol FRCollectionBase <NSFastEnumeration>
 - (void)clear;
@@ -33,6 +35,9 @@
 - (BOOL)contains:(id)item;
 - (BOOL)remove:(id)item;
 @end
+
+
+#pragma mark - FRCollection primitive data type protocols
 
 // Extra protocols that apply to primitive data types
 @protocol FRCollectionWithInt <FRCollectionBase>
@@ -56,14 +61,21 @@
 - (BOOL)removeDoubleValue:(double)item;
 @end
 
+
+#pragma mark - FRCollection protocol
+
 // The FRCollection protocol applies to data types derived from NSObject
 @protocol FRCollection <FRCollectionBase, FRCollectionWithAny>
 @end
 
 
+#pragma mark - FRCollection class
+
 // The class
 @interface FRCollection : NSObject <FRCollection>
 @end
+
+#pragma mark - FRCollectionWith categories
 
 // Categories add support for primitive data types
 @interface FRCollection (WithInt) <FRCollectionWithInt> @end

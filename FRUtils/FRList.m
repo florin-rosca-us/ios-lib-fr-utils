@@ -29,7 +29,8 @@
 @end
 
 
-// Support for primitive data types: int
+#pragma mark - Support for primitive data type: int
+
 @implementation FRList (WithInt)
 
 - (void)addAtIndex:(NSUInteger)index intValue:(int)item {
@@ -55,7 +56,8 @@
 @end
 
 
-// Support for primitive data types: NSInteger
+#pragma mark - Support for primitive data type: NSInteger
+
 @implementation FRList (WithInteger)
 
 - (void)addAtIndex:(NSUInteger)index integerValue:(NSInteger)item {
@@ -81,7 +83,8 @@
 @end
 
 
-// Support for primitive data types: float
+#pragma mark - Support for primitive data type: float
+
 @implementation FRList (WithFloat)
 
 - (void)addAtIndex:(NSUInteger)index floatValue:(float)item {
@@ -107,7 +110,8 @@
 @end
 
 
-// Support for primitive data types: double
+#pragma mark - Support for primitive data type: double
+
 @implementation FRList (WithDouble)
 
 - (void)addAtIndex:(NSUInteger)index doubleValue:(double)item {

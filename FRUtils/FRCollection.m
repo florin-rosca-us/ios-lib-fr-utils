@@ -35,6 +35,8 @@
 @end
 
 
+#pragma mark - Support for primitive data type: int
+
 @implementation FRCollection (WithInt)
 
 - (BOOL) addIntValue:(int)item {
@@ -51,6 +53,8 @@
 
 @end
 
+
+#pragma mark - Support for primitive data type: NSInteger
 
 @implementation FRCollection (WithInteger)
 
@@ -69,6 +73,8 @@
 @end
 
 
+#pragma mark - Support for primitive data type: float
+
 @implementation FRCollection (WithFloat)
 
 - (BOOL) addFloatValue:(float)item {
@@ -85,6 +91,8 @@
 
 @end
 
+
+#pragma mark - Support for primitive data type: double
 
 @implementation FRCollection (WithDouble)
 

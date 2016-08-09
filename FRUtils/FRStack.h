@@ -14,6 +14,8 @@
 
 #import "FRCollection.h"
 
+#pragma mark - FRStack base protocols
+
 // A protocol that applies to all data types including primitive data types
 @protocol FRStackBase <FRCollectionBase>
 @end
@@ -24,6 +26,8 @@
 - (id)pop;
 - (void)push:(id)item;
 @end
+
+#pragma mark - FRStack primitive data type protocols
 
 // Extra protocols that apply to primitive data types
 @protocol FRStackWithInt <FRStackBase, FRCollectionWithInt>
@@ -49,6 +53,9 @@
 - (double)popDoubleValue;
 - (void)pushDoubleValue:(double)item;
 @end
+
+
+#pragma mark - FRStack protocol
 
 // The FRStack protocol applies to data types derived from NSObject
 @protocol FRStack <FRStackBase, FRStackWithAny>

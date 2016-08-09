@@ -14,6 +14,9 @@
 
 #import "FRList.h"
 
+
+#pragma mark - FRArrayList base protocols
+
 // A protocol that applies to all data types including primitive data types
 @protocol FRArrayListBase <FRListBase>
 @end
@@ -21,6 +24,9 @@
 // A protocol that applies to data types derived from NSObject
 @protocol FRArrayListWithAny <FRArrayListBase, FRListWithAny>
 @end
+
+
+#pragma mark - FRArrayListWith primitive data type protocols
 
 // Extra protocols that apply to primitive data types
 @protocol FRArrayListWithInt <FRArrayListBase, FRListWithInt>
@@ -35,9 +41,14 @@
 @protocol FRArrayListWithDouble <FRArrayListBase, FRListWithDouble>
 @end
 
+
+#pragma mark - FRArrayList protocol
+
 // The FRArrayList protocol applies to data types derived from NSObject
 @protocol FRArrayList <FRArrayListBase, FRListWithAny> @end
 
+
+#pragma mark - FRArrayList class
 
 // The class
 @interface FRArrayList : FRList <FRArrayList> {
@@ -51,7 +62,8 @@
 @end
 
 
-// Categories add support for primitive data types
+#pragma mark - FRArrayListWith categories
+
 @interface FRArrayList (WithInt) <FRArrayListWithInt>
 @end
 

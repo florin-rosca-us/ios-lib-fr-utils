@@ -12,6 +12,7 @@
 #import "FRConstants.h"
 #import "FRArrayList.h"
 
+#pragma mark - FRArrayList class
 @implementation FRArrayList
 
 
@@ -48,6 +49,8 @@
     return [self initWithCapacity:10];
 }
 
+
+#pragma mark - FRArrayList methods
 
 - (BOOL) add:(id)item {
     if(!item) { return NO; }

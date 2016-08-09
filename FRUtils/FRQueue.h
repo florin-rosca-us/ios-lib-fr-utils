@@ -14,6 +14,9 @@
 
 #import "FRCollection.h"
 
+
+#pragma mark - FRQueue base protocols
+
 // A protocol that applies to all data types including primitive data types
 @protocol FRQueueBase <FRCollectionBase>
 @end
@@ -26,6 +29,9 @@
 - (id)remove;
 - (id)poll;
 @end
+
+
+#pragma mark - FRQueueWith primitive data type protocols
 
 // Extra protocols that apply to primitive data types
 @protocol FRQueueWithInt <FRQueueBase, FRCollectionWithInt>
@@ -59,6 +65,9 @@
 - (double)removeDoubleValue;
 - (double)pollDoubleValue;
 @end
+
+
+#pragma mark - FRQueue protocol
 
 // The FRQueue protocol applies to data types derived from NSObject
 @protocol FRQueue <FRQueueBase, FRQueueWithAny>

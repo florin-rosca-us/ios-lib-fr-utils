@@ -14,6 +14,9 @@
 
 #import "FRCollection.h"
 
+
+#pragma mark - FRList base protocols
+
 // A protocol that applies to all data types including primitive data types
 @protocol FRListBase <FRCollectionBase>
 @end
@@ -26,6 +29,9 @@
 - (NSUInteger) indexOf:(id)item;
 - (id) get:(NSUInteger)index;
 @end
+
+
+#pragma mark - FRListWith primitive data type protocols
 
 // Extra protocols that apply to primitive data types
 @protocol FRListWithInt <FRListBase, FRCollectionWithInt>
@@ -60,14 +66,22 @@
 - (double) getDoubleValue:(NSUInteger)index;
 @end
 
+
+#pragma mark - FRList protocol
+
 // The FRList protocol applies to data types derived from NSObject
 @protocol FRList <FRListBase, FRListWithAny>
 @end
 
 
+#pragma mark - FRList class
+
 // The class 
 @interface FRList : FRCollection <FRList>
 @end
+
+
+#pragma mark - FRListWith categories
 
 // Categories add support for primitive data types
 @interface FRList (WithInt) <FRListWithInt>

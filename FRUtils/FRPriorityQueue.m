@@ -24,6 +24,8 @@
 #define right(i) ((i + 1) * 2)
 
 
+#pragma mark - FRPriorityQueue class
+
 @implementation FRPriorityQueue
 
 + (instancetype)priorityQueueWithCapacity:(NSUInteger)capacity comparator:(NSComparisonResult (^)(id, id)) comparator {
@@ -101,6 +103,9 @@
     return [self initWithCapacity:DEFAULT_CAPACITY comparator:nil];
 }
 
+
+#pragma mark - FRPriorityQueue methods
+
 - (NSComparisonResult)compare:(id)o1 with:(id)o2 {
     return [FRPriorityQueue compare:o1 with:o2 using:_comparator];
 }
@@ -174,7 +179,8 @@
 // Heap - end
 
 
-// FRCollection - begin
+#pragma mark - FRCollection methods
+
 - (void)clear {
     [_list clear];
 }
@@ -202,10 +208,10 @@
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])stackbuf count:(NSUInteger)len {
     return [_list countByEnumeratingWithState:state objects:stackbuf count:len];
 }
-// FRCollection - end
 
 
-// FRQueue - begin
+#pragma mark - FRQueue methods
+
 - (BOOL)add:(id)item {
     if(![self offer:item]) {
         @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:FRErrCannotInsert userInfo:nil];
@@ -264,11 +270,11 @@
     return YES;
 }
 
-// FRQueue - end
 @end
 
 
-// Support for primitive data types: int
+#pragma mark - Support for primitive data type: int
+
 @implementation FRPriorityQueue (WithInt)
 
 - (int)elementIntValue {
@@ -294,7 +300,8 @@
 @end
 
 
-// Support for primitive data types: NSInteger
+#pragma mark - Support for primitive data type: NSInteger
+
 @implementation FRPriorityQueue (WithInteger)
 
 - (NSInteger)elementIntegerValue {
@@ -320,7 +327,8 @@
 @end
 
 
-// Support for primitive data types: float
+#pragma mark - Support for primitive data type: float
+
 @implementation FRPriorityQueue (WithFloat)
 
 - (float)elementFloatValue {
@@ -346,7 +354,8 @@
 @end
 
 
-// Support for primitive data types: double
+#pragma mark - Support for primitive data type: double
+
 @implementation FRPriorityQueue (WithDouble)
 
 - (double)elementDoubleValue {

@@ -15,6 +15,9 @@
 #import "FRQueue.h"
 #import "FRStack.h"
 
+
+#pragma mark - FRDeque base protocols
+
 // A protocol that applies to all data types including primitive data types
 @protocol FRDequeBase <FRQueueBase, FRStackBase>
 @end
@@ -34,6 +37,9 @@
 - (id)pollLast;
 -(id)removeLast;
 @end
+
+
+#pragma mark - FRDequeWith primitive data type protocols
 
 // Extra protocols that apply to primitive data types
 @protocol FRDequeWithInt <FRDequeBase, FRQueueWithInt, FRStackWithInt>
@@ -95,6 +101,9 @@
 - (double)pollLastDoubleValue;
 - (double)removeLastDoubleValue;
 @end
+
+
+#pragma mark - FRDeque protocol
 
 // The FRDeque protocol applies to data types derived from NSObject
 @protocol FRDeque <FRDequeBase, FRDequeWithAny>

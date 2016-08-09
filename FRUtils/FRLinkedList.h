@@ -15,6 +15,9 @@
 #import "FRList.h"
 #import "FRDeque.h"
 
+
+#pragma mark - FRLinkedList base protocols
+
 // A protocol that applies to all data types including primitive data types
 @protocol FRLinkedListBase <FRListBase, FRDequeBase>
 @end
@@ -22,6 +25,9 @@
 // A protocol that applies to data types derived from NSObject
 @protocol FRLinkedListWithAny <FRListWithAny, FRDequeWithAny>
 @end
+
+
+#pragma mark - FRLinkedListWith primitive data type protocols
 
 // Extra protocols that apply to primitive data types
 @protocol FRLinkedListWithInt <FRLinkedListBase, FRListWithInt, FRDequeWithInt>
@@ -36,15 +42,23 @@
 @protocol FRLinkedListWithDouble <FRLinkedListBase, FRListWithDouble, FRDequeWithDouble>
 @end
 
+
+#pragma mark - FRLinkedList protocol
+
 // The FRLinkedList protocol applies to data types derived from NSObject
 @protocol FRLinkedList <FRLinkedListBase, FRLinkedListWithAny>
 @end
 
 
+#pragma mark - FRLinkedList class
+
 // The class
 @interface FRLinkedList : FRList <FRLinkedList>
 + (instancetype) list;
 @end
+
+
+#pragma mark - FRLinkedListWith categories
 
 // Categories add support for primitive data types
 @interface FRLinkedList (WithInt) <FRLinkedListWithInt> @end

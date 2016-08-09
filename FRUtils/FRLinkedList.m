@@ -15,7 +15,8 @@
 #import "FRLinkedList.h"
 
 
-// A node in the linked list
+#pragma mark - Node class
+
 @interface Node: NSObject
 @property(nonatomic,retain) Node *prev;
 @property(nonatomic,retain) Node *next;
@@ -46,12 +47,14 @@
 @end
 
 
-// The class implementation
+#pragma mark - FRLinkedList class
+
 @implementation FRLinkedList {
     Node *head;
     Node *tail;
     NSUInteger size;
 }
+
 
 // Class factory method. Creates a new instance
 + (instancetype)list { return [[self alloc] init]; }
@@ -143,7 +146,8 @@
 }
 
 
-// FRCollection begin
+#pragma mark - FRCollection methods
+
 - (BOOL)add:(id)item {
     return [self offerLast:item];
 }
@@ -177,11 +181,37 @@
 - (NSUInteger)size {
     return size;
 }
-// FRCollection end
+
+- (NSArray*)toArray {
+    NSMutableArray *a = [NSMutableArray arrayWithCapacity:[self size]];
+    for(Node *node = head; node; node = node.next) {
+        [a addObject:node.item];
+    }
+    return [NSArray arrayWithArray:a];
+}
+
+// Enumerates over the items in this list. From http://cocoawithlove.com/2008/05/implementing-countbyenumeratingwithstat.html
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])stackbuf count:(NSUInteger)len {
+    assert (sizeof(Node *) <= sizeof(unsigned long));
+    if(state->state == 0) {
+        state->mutationsPtr = &size;
+        state->extra[0] = (long)head;
+        state->state = 1;
+    }
+    Node *node = (__bridge Node *)((void *)state->extra[0]);
+    NSUInteger i;
+    for (i = 0; i < len && node != nil; i++) {
+        stackbuf[i] = node.item;
+        node = node.next;
+    }
+    state->extra[0] = (unsigned long)node;
+    state->itemsPtr = stackbuf;
+    return i;
+}
 
 
+#pragma mark - FRList methods
 
-// FRList begin
 - (void)addAtIndex:(NSUInteger)index item:(id)item {
     if(index > size) {
         @throw [NSException exceptionWithName:NSRangeException reason:[NSString stringWithFormat:FRErrBadIndex, (unsigned long)index] userInfo:nil];
@@ -223,10 +253,10 @@
     [self removeNode:node];
     return node.item;
 }
-// FRList end
 
 
-// FRQueue begin
+#pragma mark - FRQueue methods
+
 - (BOOL)offer:(id)item {
     return [self offerLast:item];
 }
@@ -252,10 +282,10 @@
 - (id)poll {
     return [self pollFirst];
 }
-// FRQueue end
 
 
-// FRDeque begin
+#pragma mark - FRDeque methods
+
 - (BOOL)offerFirst:(id)item {
     return head ? [self offerBeforeNode:head item:item] : [self offerOriginItem:item];
 }
@@ -323,10 +353,10 @@
     [self removeNode:tail];
     return item;
 }
-// FRDeque end
 
 
-// FRStack begin
+#pragma mark - FRStack methods
+
 - (id)pop {
     if(!head) {
         @throw [NSException exceptionWithName:NSRangeException reason:FRErrEmpty userInfo:nil];
@@ -337,43 +367,12 @@
 - (void)push:(id)item {
     [self addFirst:item];
 }
-// FRStack end
-
-
-- (NSArray*)toArray {
-    NSMutableArray *a = [NSMutableArray arrayWithCapacity:[self size]];
-    for(Node *node = head; node; node = node.next) {
-        [a addObject:node.item];
-    }
-    return [NSArray arrayWithArray:a];
-}
-
-
-// Enumerates over the items in this list.
-// From http://cocoawithlove.com/2008/05/implementing-countbyenumeratingwithstat.html
-//
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])stackbuf count:(NSUInteger)len {
-    assert (sizeof(Node *) <= sizeof(unsigned long));
-    if(state->state == 0) {
-        state->mutationsPtr = &size;
-        state->extra[0] = (long)head;
-        state->state = 1;
-    }
-    Node *node = (__bridge Node *)((void *)state->extra[0]);
-    NSUInteger i;
-    for (i = 0; i < len && node != nil; i++) {
-        stackbuf[i] = node.item;
-        node = node.next;
-    }
-    state->extra[0] = (unsigned long)node;
-    state->itemsPtr = stackbuf;
-    return i;
-}
 
 @end
 
 
-// Support for primitive data types: int
+#pragma mark - Support for primitive data type: int
+
 @implementation FRLinkedList (WithInt)
 
 - (BOOL)offerIntValue:(int)item {
@@ -455,7 +454,8 @@
 @end
 
 
-// Support for primitive data types: NSInteger
+#pragma mark - Support for primitive data type: NSInteger
+
 @implementation FRLinkedList (WithInteger)
 
 - (BOOL)offerIntegerValue:(NSInteger)item {
@@ -537,7 +537,8 @@
 @end
 
 
-// Support for primitive data types: float
+#pragma mark - Support for primitive data type: float
+
 @implementation FRLinkedList (WithFloat)
 
 - (BOOL)offerFloatValue:(float)item {
@@ -619,7 +620,8 @@
 @end
 
 
-// Support for primitive data types: double
+#pragma mark - Support for primitive data type: double
+
 @implementation FRLinkedList (WithDouble)
 
 - (BOOL)offerDoubleValue:(double)item {
