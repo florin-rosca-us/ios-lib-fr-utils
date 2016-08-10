@@ -70,7 +70,7 @@
 #pragma mark - FRList protocol
 
 // The FRList protocol applies to data types derived from NSObject
-@protocol FRList <FRListBase, FRListWithAny>
+@protocol FRList <FRCollection, FRListBase, FRListWithAny>
 @end
 
 

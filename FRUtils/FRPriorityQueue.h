@@ -46,7 +46,7 @@
 #pragma mark - FRPriorityQueue protocol
 
 // The FRPriorityQueue protocol applies to data types derived from NSObject
-@protocol FRPriorityQueue <FRPriorityQueueBase, FRPriorityQueueWithAny>
+@protocol FRPriorityQueue <FRQueue, FRPriorityQueueBase, FRPriorityQueueWithAny>
 @end
 
 

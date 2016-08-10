@@ -106,7 +106,7 @@
 #pragma mark - FRDeque protocol
 
 // The FRDeque protocol applies to data types derived from NSObject
-@protocol FRDeque <FRDequeBase, FRDequeWithAny>
+@protocol FRDeque <FRQueue, FRStack, FRDequeBase, FRDequeWithAny>
 @end
 
 

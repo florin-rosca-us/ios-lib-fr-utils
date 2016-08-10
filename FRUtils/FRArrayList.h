@@ -45,7 +45,7 @@
 #pragma mark - FRArrayList protocol
 
 // The FRArrayList protocol applies to data types derived from NSObject
-@protocol FRArrayList <FRArrayListBase, FRListWithAny> @end
+@protocol FRArrayList <FRList, FRArrayListBase, FRListWithAny> @end
 
 
 #pragma mark - FRArrayList class

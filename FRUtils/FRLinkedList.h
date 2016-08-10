@@ -46,7 +46,7 @@
 #pragma mark - FRLinkedList protocol
 
 // The FRLinkedList protocol applies to data types derived from NSObject
-@protocol FRLinkedList <FRLinkedListBase, FRLinkedListWithAny>
+@protocol FRLinkedList <FRDeque, FRLinkedListBase, FRLinkedListWithAny>
 @end
 
 
