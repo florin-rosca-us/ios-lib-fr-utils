@@ -6,6 +6,7 @@ When switching form Java to Objective-C, I found that many classes that I was us
 ## Hierarchy
 ![hierarchy](FRUtils/Hierarchy.png)
 
+## Java Equivalents
 | Objective-C | Java
 | ----------- | ----
 | [FRCollection](FRUtils/FRCollection.h) | [java.util.Collection](https://docs.oracle.com/javase/7/docs/api/java/util/Collection.html)
