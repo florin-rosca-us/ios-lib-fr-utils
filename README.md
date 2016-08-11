@@ -6,7 +6,7 @@ When switching form Java to Objective-C, I found that many classes that I was us
 ## Hierarchy
 ![hierarchy](FRUtils/Hierarchy.png)
 
-## Java Counterparts
+## Java Equivalents
 | Objective-C | Java
 | ----------- | ----
 | [FRCollection](FRUtils/FRCollection.h) | [java.util.Collection](https://docs.oracle.com/javase/7/docs/api/java/util/Collection.html)
@@ -36,7 +36,7 @@ val2 = [id getIntValue:0];
 ```
 
 ## Usage
-The classes in this library are following the API exposed by their Java counterparts. See Java documentation for usage.
+The classes in this library are following the API exposed by their Java equivalents. See Java documentation for usage.
 Example:
 
 ```
