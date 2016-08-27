@@ -4,8 +4,8 @@
 //
 //  An "abstract" class
 //
-//  Created by Florin on 7/18/16.
-//  Copyright © 2016 Florin. All rights reserved.
+//  Created by Florin Rosca on 7/18/16.
+//  Copyright © 2016 Florin Rosca. All rights reserved.
 //
 //  A Java-style collection.
 //  See https://docs.oracle.com/javase/7/docs/api/java/util/Collection.html

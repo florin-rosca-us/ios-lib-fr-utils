@@ -2,8 +2,8 @@
 //  FRPriorityQueue.h
 //  FRUtils
 //
-//  Created by Florin on 7/27/16.
-//  Copyright © 2016 Florin. All rights reserved.
+//  Created by Florin Rosca on 7/27/16.
+//  Copyright © 2016 Florin Rosca. All rights reserved.
 //
 //  A Java-style priority queue.
 //  See http://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html
