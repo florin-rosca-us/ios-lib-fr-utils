@@ -57,7 +57,6 @@
 		4ECA7A221C63F18A0040DF1A /* FRCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRCollection.h; sourceTree = "<group>"; };
 		4ECA7A231C63F3380040DF1A /* FRStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRStack.h; sourceTree = "<group>"; };
 		4ECA7A241C63F4DC0040DF1A /* FRDeque.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRDeque.h; sourceTree = "<group>"; };
-		4ED349681D3D606000861C00 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = FRUtils/README.md; sourceTree = "<group>"; };
 		4ED349701D3D655700861C00 /* FRUtilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FRUtilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED349721D3D655700861C00 /* FRUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRUtilsTests.m; sourceTree = "<group>"; };
 		4ED349741D3D655700861C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				4ED3497B1D3D683900861C00 /* Hierarchy.png */,
-				4ED349681D3D606000861C00 /* README.md */,
 			);
 			name = Documentation;
 			sourceTree = "<group>";
