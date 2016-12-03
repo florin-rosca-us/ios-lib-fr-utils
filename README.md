@@ -55,7 +55,7 @@ The following primitive data types are supported:
 The names of the methods used for working with primitive data types match the methods in `NSNumber`: `[NSNumber withXXX]`.
 Example:
 
-```
+``` objective-c
 FRList* list = [FRArrayList list];
 [list addIntegerValue:someNSInteger];
 [list removeIntegerValue:someNSInteger];
